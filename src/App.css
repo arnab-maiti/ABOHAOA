@@ -5,7 +5,7 @@
 }
 
 html, body {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   overflow: hidden; /* Prevents scrolling */
 }
@@ -21,8 +21,8 @@ body {
 }
 
 .weather {
-  width: 30vw;
-  height: 90vh;
+  width: 90vw;
+  height: 95vh;
   background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   border-radius: 10px;
@@ -31,11 +31,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  
 }
 
 .input {
-  width: 80%;
+  width: 30%;
   height: 40px;
   padding-left: 10px;
   border-radius: 5px;
@@ -47,7 +47,7 @@ body {
 }
 
 .button {
-  width: 20%;
+  width: 10%;
   height: 40px;
   margin-top: 15px;
   border-radius: 5px;
@@ -60,7 +60,7 @@ body {
 
 .main {
   width: 100%;
-  height: 70vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,13 +82,14 @@ h3 {
 }
 
 img {
-  height: 20vh;
+  height: 30vh;
   max-height: 100px;
   margin: 10px 0;
 }
 
 .temp {
   font-size: 2em;
+  padding-top: 40px;
 }
 
 .at {
@@ -97,8 +98,7 @@ img {
 
 .hum {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  
   gap: 10px;
   color: white;
   margin-top: 15px;
@@ -140,4 +140,32 @@ img {
   .hum {
     font-size: 0.9em;
   }
+}
+h3{
+  color: aliceblue;
+  margin-top: 10px;
+}
+.forecast-list{
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  width: 100%;
+  color: white;
+  padding-left: 35px;
+ padding-right: 35px;
+}
+.im{
+  display: flex;
+  gap: 28px;
+}
+.forecast-item{
+  height: 240px;
+  padding: 45px;
+  background: transparent;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
+}
+.forecast{
+  width: 100%;
+  text-align: center;
 }
