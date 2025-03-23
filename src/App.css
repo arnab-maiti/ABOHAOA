@@ -73,12 +73,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 15px; /* Adjusted gap between city name, temperature, and image */
 }
 
 h3 {
   font-size: 1.4em;
   margin-bottom: 8px;
+  text-align: center; /* Ensure the city name is centered */
+}
+
+.im {
+  display: flex; /* Apply flexbox layout here */
+  gap: 15px; /* Space between temperature and image */
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Center items vertically */
 }
 
 img {
@@ -111,7 +119,7 @@ img {
 
   .weather {
     width: 95vw;
-    height: 95vh;
+    height: 100vh; /* Increase height to fill the viewport */
     padding: 15px;
     overflow-y: auto; /* Allow scrolling only on mobile devices */
   }
@@ -145,8 +153,23 @@ img {
     font-size: 0.9em;
   }
 
+  /* Forecast List Styles for Mobile: Horizontal Scroll */
   .forecast-list {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row; /* Align items side by side */
+    overflow-x: auto; /* Enable horizontal scroll */
+    overflow-y: hidden; /* Disable vertical scroll */
+    gap: 10px; /* Space between forecast items */
+    padding: 15px; /* Add some padding for better spacing */
+  }
+
+  .forecast-item {
+    flex-shrink: 0; /* Prevent items from shrinking */
+    width: 150px; /* Adjust width for mobile */
+    padding: 20px;
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
   }
 }
 
@@ -164,21 +187,17 @@ img {
 h3 {
   color: aliceblue;
   margin-top: 10px;
+  text-align: center; /* Ensures the city name is centered */
 }
 
 .forecast-list {
   display: flex;
   justify-content: space-between;
-  height: 20px;
+  height: 240px; /* Adjust height of forecast items */
   width: 100%;
   color: white;
   padding-left: 35px;
   padding-right: 35px;
-}
-
-.im {
-  display: flex;
-  gap: 28px;
 }
 
 .forecast-item {
