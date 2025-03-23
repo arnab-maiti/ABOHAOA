@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,22 +8,19 @@
 html, body {
   height: 100vh;
   width: 100%;
-  overflow: hidden; /* Prevents scrolling */
+  overflow: auto; /* Allows scrolling on mobile */
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(./assets/vid1.gif);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url(./assets/vid1.gif) center/cover no-repeat;
 }
 
 .weather {
   width: 90vw;
-  height: 95vh;
+  height: auto;
   background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   border-radius: 10px;
@@ -31,11 +29,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  text-align: center;
 }
 
 .input {
-  width: 30%;
+  width: 80%;
   height: 40px;
   padding-left: 10px;
   border-radius: 5px;
@@ -47,7 +45,7 @@ body {
 }
 
 .button {
-  width: 10%;
+  width: 30%;
   height: 40px;
   margin-top: 15px;
   border-radius: 5px;
@@ -56,15 +54,6 @@ body {
   background: rgba(255, 255, 255, 0.2);
   color: white;
   border: none;
-}
-
-.main {
-  width: 100%;
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .data {
@@ -79,10 +68,11 @@ body {
 h3 {
   font-size: 1.4em;
   margin-bottom: 8px;
+  color: aliceblue;
 }
 
 img {
-  height: 30vh;
+  height: auto;
   max-height: 100px;
   margin: 10px 0;
 }
@@ -92,23 +82,42 @@ img {
   padding-top: 40px;
 }
 
-.at {
-  font-size: 1.2em;
-}
-
 .hum {
   display: flex;
-  
   gap: 10px;
   color: white;
   margin-top: 15px;
 }
 
-/* 📱 Responsive Design for Mobile */
-@media (max-width: 480px) {
+.forecast {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.forecast-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: white;
+  gap: 20px;
+  padding: 20px;
+}
+
+.forecast-item {
+  height: 240px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .weather {
     width: 95vw;
-    height: 95vh;
+    height: auto;
     padding: 15px;
   }
 
@@ -119,13 +128,9 @@ img {
   }
 
   .button {
-    width: 80%;
+    width: 60%;
     height: 35px;
     font-size: 0.9em;
-  }
-
-  h3 {
-    font-size: 1.2em;
   }
 
   .temp {
@@ -133,39 +138,45 @@ img {
   }
 
   img {
-    height: 15vh;
     max-height: 80px;
   }
 
   .hum {
     font-size: 0.9em;
   }
+
+  .forecast-list {
+    flex-direction: column;
+    align-items: center;
+  }
 }
-h3{
-  color: aliceblue;
-  margin-top: 10px;
-}
-.forecast-list{
-  display: flex;
-  justify-content: space-between;
-  height: 20px;
-  width: 100%;
-  color: white;
-  padding-left: 35px;
- padding-right: 35px;
-}
-.im{
-  display: flex;
-  gap: 28px;
-}
-.forecast-item{
-  height: 240px;
-  padding: 45px;
-  background: transparent;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
-}
-.forecast{
-  width: 100%;
-  text-align: center;
+
+@media (max-width: 480px) {
+  .weather {
+    padding: 10px;
+  }
+
+  .input {
+    width: 95%;
+    height: 30px;
+    font-size: 0.9em;
+  }
+
+  .button {
+    width: 90%;
+    height: 30px;
+    font-size: 0.8em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  .temp {
+    font-size: 1.4em;
+  }
+
+  img {
+    max-height: 70px;
+  }
 }
